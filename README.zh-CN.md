@@ -66,7 +66,7 @@ gettext 翻译目录保存在 `locales/`，并编译到 `src/ddt4all/generated/l
 
 所有翻译目录均应完整填写 `msgstr`、不含 `#, fuzzy` 标记，并保留原有 `%s` 和命名占位符。
 
-`.mo` 为编译产物，故意不提交到 Git 仓库。打包或从干净克隆运行前，请执行：
+`.mo` 为编译产物，故意不提交到 Git 仓库。缺少 `.mo` 时，应用会自动加载源 `.po` 翻译目录；仅在生成可发布安装包时需要执行：
 
 ```bash
 python scripts/i18n.py po-to-mo
@@ -101,9 +101,6 @@ source ./venv/bin/activate
 
 # 安装包（开发时使用可编辑模式）
 pip install -e .
-
-# 编译翻译目录
-python scripts/i18n.py po-to-mo
 
 # 启动应用
 ddt4all

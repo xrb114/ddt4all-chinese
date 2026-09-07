@@ -94,8 +94,9 @@ All catalogs are complete (content of all `msgstr` fields is present
 and no `#, fuzzy` remains), keep valid gettext syntax and preserve the original
 `%s` / named placeholders.
 
-Compiled `.mo` files are build artifacts and are intentionally not committed. Run
-`python scripts/i18n.py po-to-mo` before packaging or launching from a clean clone.
+Compiled `.mo` files are build artifacts and are intentionally not committed. The
+application loads the source `.po` catalog automatically when a compiled catalog is
+absent; run `python scripts/i18n.py po-to-mo` when producing a distributable build.
 For Simplified Chinese documentation, see [README.zh-CN.md](README.zh-CN.md).
 
 ---
